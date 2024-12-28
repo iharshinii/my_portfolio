@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding:20px 10%;
+      background-color: #502743;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header nav a {
+      margin: 20px;
+      color: #e2cbd8;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 10%;
+      background: linear-gradient(to right, #6a11cb, #d1306b);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #fff;
+      color: #c42e7b;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #f097be;
+      color: #fff;
+    }
+
+    .section {
+      padding: 50px 10%;
+      background-color: white;
+    }
+
+    .section h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1 1 calc(30% - 20px);
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    footer {
+      background-color: #502743;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact">Blog</a>
+      <a href="#about">Hire Me</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Hi, I'm Harshini R</h2>
+    <p>A passionate Web Developer and Designer</p>
+    <button onclick="scrollToSection('projects')">View My Works</button>
+  </div>
+
+  <section class="section" id="about">
+    <h3>About Me</h3>
+    <p>Hello! I'm Harshini R, a creative and dedicated web developer with a passion for crafting visually appealing and user-friendly websites. I specialize in front-end development, combining modern design principles with clean, efficient code. My journey in web development began with a curiosity to understand how websites work, which has grown into a fulfilling career. Outside of coding, I enjoy exploring new technologies, collaborating on innovative projects, and sharing knowledge with the community.</p>
+  </section>
+
+  <section class="section" id="projects">
+    <h3>My Projects</h3>
+    <div class="card-container">
+      <div class="card">
+        <img src="download(1).jpg" alt="Project 1">
+        <h4>Project 1</h4>
+        <p>A brilliant but reclusive hacker is forced to team up with a seasoned detective to unravel a series of cryptic crimes connected to a shadowy online network known as "The Code."</p>
+      </div>
+      <div class="card">
+        <img src="download (5).jpg" alt="Project 2">
+        <h4>Project 2</h4>
+        <p>In a futuristic world, humanity seeks to colonize distant planets, but only one resource can bridge the gap between survival and extinction.</p>
+      </div>
+      <div class="card">
+        <img src="image(n).jpg" alt="Project 3">
+        <h4>Project 3</h4>
+        <p>Node.js is a powerful, open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside of a browser.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Harshini R. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          alert(`You clicked on ${card.querySelector('h4').textContent}`);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
